@@ -14,13 +14,19 @@
     <div data-role="page" id="vista">
         <div data-role="header" style="background-color: rgb(27, 52, 161);">
             <h1
-                style="text-align: center; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:10; color:white; text-align:center;">
+                style="text-align: center; font-size: 40px; font-family: 'Times New Roman', Times, serif; margin:10; color:white; text-align:center;">
                 Cine Mar </h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="home" class="ui-btn-active">Inicio</a></li>
+                    <li><a href="#editar" data-icon="edit">Editar</a></li>
+                    <li><a href="#vista" data-icon="grid">Registros</a></li>
+                </ul>
+            </div>
         </div>
-        <center style="background: rgb(27, 52, 161);">
-            <h1 style="color: white;">Editar Película</h1>
-        </center>
-        </div>
+        <h1
+        style="text-align: center; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:10; color:white; text-align:center; background-color: rgb(27, 52, 161);">
+        Editar Película </h1>
         <div data-role="content">
             <form action="/<%= pelicula.codigo%>" method="POST">
                 <label for="flip-6">Código de barras: </label>
@@ -44,10 +50,10 @@
                     <option value="1" <%= pelicula.status=1?"select":"" %>>Si</option>
                 </select>
     
-                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini"">Guardar</button>
             </form>
         </div>
-        <div data-role="footer">
+        <div data-role="footer"  style=" background-color: rgb(27, 52, 161); color: white;">
             <h5>Desarrollado por : Mariano Fajardo Islas.</h5>
         </div>
     </div>
