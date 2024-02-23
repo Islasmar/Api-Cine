@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>ApiCinema</title>
+</head>
+
+<body>
+    <div data-role="page" id="index">
+        <div data-role="header" style="background-color: rgb(27, 52, 161);">
+            <h1
+                style="text-align: center; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:10; color:white; text-align:center;">
+                Cine Mar </h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="home" class="ui-btn-active">Inicio</a></li>
+                    <li><a href="#editar" data-icon="edit">Editar</a></li>
+                    <li><a href="#vista" data-icon="grid">Registros</a></li>
+                </ul>
+            </div>
+        </div>
+        <center style="background: rgb(27, 52, 161);">
+            <h1 style="color: white;">Cartelera de Cine</h1>
+        </center>
+        <center>
+            <div data-role="content" style="justify-content:space-between;">
+                <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img
+                        class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/l04a_coral-rerelease_2009_argentina_4x5_93c61131.jpeg?region=0%2C0%2C2250%2C2813"
+                        style="width: 30%; box-shadow: rgb(61, 60, 60);"></a>
+                <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+                    <a href="#" data-rel="back"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img
+                        class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/l04a_coral-rerelease_2009_argentina_4x5_93c61131.jpeg?region=0%2C0%2C2250%2C2813"
+                        style="max-height:512px;" alt="Paris, France">
+                    <center>
+                        <h1>Proximamente en<br>Cines</h1>
+                    </center>
+                </div>
+                <a href="#thor" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/56015l02_bigsal_argentina_intpayoff_4x5_b6776139.jpeg?region=0%2C0%2C2250%2C2813"
+                        style="width: 30%;"></a>
+                <div data-role="popup" id="thor" data-overlay-theme="b" data-theme="b" data-corners="false">
+                    <a href="#" data-rel="back"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img
+                        class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/56015l02_bigsal_argentina_intpayoff_4x5_b6776139.jpeg?region=0%2C0%2C2250%2C2813"
+                        style="max-height:512px;" alt="Paris, France">
+                    <center>
+                        <h1>Proximamente en<br>Cines</h1>
+                    </center>
+                </div>
+                <a href="#oppenheimer" data-rel="popup" data-position-to="window" data-transition="fade"><img
+                        class="popphoto" src="https://i.blogs.es/1e965a/cartel-oppenheimer/450_1000.jpeg"
+                        style="width: 30%;"></a>
+                <div data-role="popup" id="oppenheimer" data-overlay-theme="b" data-theme="b" data-corners="false">
+                    <a href="#" data-rel="back"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img
+                        class="popphoto" src="https://i.blogs.es/1e965a/cartel-oppenheimer/450_1000.jpeg"
+                        style="max-height:512px;" alt="Paris, France">
+                    <center>
+                        <h1>Proximamente en<br>Cines</h1>
+                    </center>
+                </div>
+
+            </div>
+        </center>
+        <center>
+            <form action="/" method="POST"
+                style="width: 30%; display: content; justify-content: space-between; align-items: center;">
+                <input type="text" name="codigo" id="codigo" placeholder="Código de la película">
+
+                <input type="text" name="link_pelicula" id="link_pelicula"
+                    placeholder="Dirección de enlace de la película">
+
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre de la Película">
+
+                <input type="text" name="descripcion" id="descripcion" placeholder="Descripción">
+
+                <input type="date" name="fechaEstreno" id="fechaEstreno" placeholder="Fecha de Estreno">
+
+                <label for="flip-6">Status:</label>
+                <select name="status" id="flip-6" data-role="slider">
+                    <option value="0">Inactivo</option>
+                    <option value="1">Activo</option>
+                </select>
+
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini" style="
+                    #submit-6 {
+                        background-color: transparent; /* Fondo transparente para permitir que el color de fondo del hover se muestre */
+                        color: black; /* Color del texto */
+                        border: 1px solid black; /* Borde del botón */
+                        padding: 5px 10px; /* Espaciado interno */
+                        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+                        transition: background-color 0.3s, color 0.3s; /* Efecto de transición suave */
+                    }
+            
+                    /* Estilo del botón al pasar el mouse sobre él */
+                    #submit-6:hover {
+                        background-color: blue; /* Cambia el color de fondo al azul */
+                        color: white; /* Cambia el color del texto a blanco */
+                    }
+                "">Guardar</button>
+            </form>
+        </center>
+
+
+        <div data-role="footer" style="background-color: rgb(27, 52, 161);; color: white;">
+            <h5>Desarrollado por : Mariano Fajardo Islas.</h5>
+        </div>
+    </div>
+
+    <div data-role="page" id="editar">
+        <div data-role="header" style="background-color: rgb(27, 52, 161);">
+            <h1
+                style="text-align: center; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:10; color:white; text-align:center;">
+                Cine Mar </h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="home" >Inicio</a></li>
+                    <li><a href="#editar" data-icon="edit" class="ui-btn-active">Editar</a></li>
+                    <li><a href="#vista" data-icon="grid">Registros</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <center style="background: rgb(27, 52, 161);">
+            <h1 style="color: white;">Editar Registro</h1>
+        </center>
+
+        <center>
+            <div data-role="content" style="margin-left: 40px;">
+                <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade"><img
+                        class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/encanto_ka_las_pay1_92ad7410.jpeg"
+                        style="width: 30%; box-shadow: rgb(61, 60, 60);"></a>
+                <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+                    <a href="#" data-rel="back"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img
+                        class="popphoto"
+                        src="https://lumiere-a.akamaihd.net/v1/images/encanto_ka_las_pay1_92ad7410.jpeg"
+                        style="max-height:512px;" alt="Paris, France">
+                    <center>
+                        <h1>Proximamente en<br>Cines</h1>
+                    </center>
+                </div>
+            </div>
+
+
+            <div data-role="content">
+                <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter"
+                    data-input="#searchForCollapsibleSet">
+                    <% peliculas.forEach((pelicula)=>{ %>
+                        <div data-role="collapsible" data-filtertext="<%= pelicula.descripcion %>">
+                            <h3>
+                                <%= pelicula.descripcion %>
+                            </h3>
+                            <ul data-role="listview" data-inset="false">
+                                <img style="width: 170px; border-radius: 5px; height: 200px; margin-bottom: 10px;"
+                                    src="<%= pelicula.link_pelicula %>" alt="<%= pelicula.descripcion %>">
+                                <li>Código de barras: <%= pelicula.codigo %>
+                                </li>
+                                <li>Dirección de enlace de la Película: <%= pelicula.link_pelicula %>
+                                </li>
+                                <li>Nombre de la película:<%= pelicula.nombre %>
+                                </li>
+                                <li>Descripción: <%= pelicula.descripcion %>
+                                </li>
+                                <li>Fecha de estreno: <%= pelicula.fechaEstreno %>
+                                </li>
+                                <li>Estatus: <%= pelicula.status %>
+                                </li>
+                                <li><a href="/<%= pelicula.codigo%>" class="ui-btn"
+                                        style="background-color: beige;">Editar</a>
+                                </li>
+                                <li><a href="/delete/<%= pelicula.codigo%>" class="ui-btn"
+                                        style="background-color: beige;">Eliminar</a></li>
+                            </ul>
+                        </div>
+                        <% })%>
+                </div>
+            </div>
+            <div data-role="footer" style="background-color: rgb(27, 52, 161);; color: white;">
+                <h5>Desarrollado por : Mariano Fajardo Islas.</h5>
+            </div>
+    </div>
+    </center>
+
+    <div data-role="page" id="vista">
+        <div data-role="header" style="background-color: rgb(27, 52, 161);">
+            <h1
+                style="text-align: center; font-size: 40px; font-family: 'Montserrat', sans-serif; margin:10; color:white; text-align:center;">
+                Cine Mar </h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#index" data-icon="home" >Inicio</a></li>
+                    <li><a href="#editar" data-icon="edit" >Editar</a></li>
+                    <li><a href="#vista" data-icon="grid" class="ui-btn-active">Registros</a></li>
+                </ul>
+            </div>
+        </div>
+        <center style="background: rgb(27, 52, 161);">
+            <h1 style="color: white;">Buscador de Películas</h1>
+        </center>
+        <form>
+            <input data-type="search" id="searchForCollapsibleSet">
+        </form>
+        <br>
+        <div data-role="content">
+            <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter"
+                data-input="#searchForCollapsibleSet">
+                <% peliculas.forEach((pelicula)=>{ %>
+                    <div data-role="collapsible" data-filtertext="<%= pelicula.descripcion %>">
+                        <h3>
+                            <%= pelicula.descripcion %>
+                        </h3>
+                        <ul data-role="listview" data-inset="false">
+                            <li>Código de barras: <%= pelicula.codigo %>
+                            </li>
+                            <li>Dirección de enlace de la Película: <%= pelicula.link_pelicula %>
+                            </li>
+                            <li>Nombre de la película:<%= pelicula.nombre %>
+                            </li>
+                            <li>Descripción: <%= pelicula.descripcion %>
+                            </li>
+                            <li>Fecha de estreno: <%= pelicula.fechaEstreno %>
+                            </li>
+                            <li>Estatus: <%= pelicula.status %>
+                            </li>
+                        </ul>
+                    </div>
+                    <% })%>
+
+            </div>
+        </div>
+        <center>
+            <div data-role="content" style="margin-left: 40px;">
+                <a href="#pixar" data-rel="popup" data-position-to="window" data-transition="fade"><img class="popphoto"
+                        src="https://i.blogs.es/b66fbf/pixaar/1366_2000.jpg" style="width:50%"></a>
+                <div data-role="popup" id="pixar" data-overlay-theme="b" data-theme="b" data-corners="false">
+                    <a href="#" data-rel="back"
+                        class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img
+                        class="popphoto" src="https://i.blogs.es/b66fbf/pixaar/1366_2000.jpg" style="max-height:512px;"
+                        alt="Luca">
+                    <center>
+                        <h1>Proximamente en<br>Cines</h1>
+                    </center>
+                </div>
+            </div>
+        </center>
+        <div data-role="footer" style="background-color: rgb(27, 52, 161);; color: white;">
+            <h5>Desarrollado por : Mariano Fajardo Islas.</h5>
+        </div>
+    </div>
+
+</body>
+
+</html>
